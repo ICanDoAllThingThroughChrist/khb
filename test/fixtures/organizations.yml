@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  person: MyString
+  office: 1
+  cell: 1
+  fax: 1
+  container: 1
+  date: 
+  material_type: 
+  keymap: MyString
+  council: MyString
+  location: MyString
+
+two:
+  name: MyString
+  person: MyString
+  office: 1
+  cell: 1
+  fax: 1
+  container: 1
+  date: 
+  material_type: 
+  keymap: MyString
+  council: MyString
+  location: MyString
