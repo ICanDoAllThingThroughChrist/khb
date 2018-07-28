@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725213948) do
+ActiveRecord::Schema.define(version: 20180728142511) do
 
   create_table "councils", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "organizations"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -33,8 +32,6 @@ ActiveRecord::Schema.define(version: 20180725213948) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "council_id"
-    t.index ["council_id"], name: "index_organizations_on_council_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -42,6 +39,16 @@ ActiveRecord::Schema.define(version: 20180725213948) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "council_id"
+    t.integer "organization_id"
+    t.datetime "request_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["council_id"], name: "index_requests_on_council_id"
+    t.index ["organization_id"], name: "index_requests_on_organization_id"
   end
 
 end

@@ -1,3 +1,4 @@
 class Organization < ApplicationRecord
-    belongs_to :council
+    has_many :requests
+    has_many :councils, :through => :requests
 end
